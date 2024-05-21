@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XML ID="Login">
+	<Schema xmlns="MaietData" xmlns:dt="MaietDataTypes" />
+
+<!--
+   Login 윈도우   
+   Last Update : 29.OCT.2004
+   Editor      : Lim Dong Hwan
+-->
+
+
+<!-- 프레임 생성 : Login -->
+	<FRAME item="Login">
+		<FRAMELOOK>NullFrameLook</FRAMELOOK>
+		<BOUNDS>
+			<X>0</X>
+			<Y>0</Y>
+			<W>800</W>
+			<H>600</H>
+		</BOUNDS>
+		<TITLEBAR>false</TITLEBAR>
+		<RESIZABLE>false</RESIZABLE>
+		<FOCUSABLE>false</FOCUSABLE>
+		<VISIBLE>false</VISIBLE>
+	</FRAME>
+	
+<!-- Picture : 배경 이미지 -->
+	<PICTURE item="Login_BackgrdImg" parent="Login">
+		<BOUNDS>
+			<X>0</X>
+			<Y>0</Y>
+			<W>800</W>
+			<H>600</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP></BITMAP>
+	</PICTURE>
+
+<!-- Label : SVN revision -->	
+	<LABEL item="Login_SvnRevision" parent="Login">
+		<TEXTCOLOR>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>10</X>
+			<Y>10</Y>
+			<W>200</W>
+			<H>25</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>true</VISIBLE>
+		<TEXT></TEXT>
+	</LABEL>
+
+
+<!-- LABEL : 연결중 -->
+	<LABEL item="Login_ConnectingMsg" parent="Login">
+		<FONT>FONTb11b</FONT>
+		<TEXTCOLOR>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>200</X>
+			<Y>450</Y>
+			<W>400</W>
+			<H>25</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<TEXT></TEXT>
+	</LABEL>
+
+
+<!-- 프레임 생성 : LoginFrame -->
+	<FRAME item="LoginFrame" parent="Login">
+		<FRAMELOOK>NullFrameLook</FRAMELOOK>
+		<BOUNDS>
+			<X>196</X>
+			<Y>320</Y>
+			<W>436</W>
+			<H>250</H>
+		</BOUNDS>
+		<TITLEBAR>false</TITLEBAR>
+		<RESIZABLE>false</RESIZABLE>
+		<FOCUSABLE>false</FOCUSABLE>
+		<VISIBLE>false</VISIBLE>
+	</FRAME>
+
+
+<!-- Label : Gunz Longin -->
+	<LABEL item="Label" parent="LoginFrame">
+		<FONT>FONTa10_O2Wht</FONT>
+		<TEXTCOLOR>
+			<R>220</R>
+			<G>220</G>
+			<B>220</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>23</X>
+			<Y>1</Y>
+			<W>200</W>
+			<H>24</H>
+		</BOUNDS>
+		<TEXT>STR:UI_LOGIN_01</TEXT> <!-- GunZ Login -->
+	</LABEL>
+
+
+<!-- 서버 선택 -->
+	<!-- Picture : 패널 이미지 -->
+	<PICTURE item="Login_Panel" parent="LoginFrame">
+		<BOUNDS>
+			<X>0</X>
+			<Y>0</Y>
+			<W>436</W>
+			<H>200</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP></BITMAP>
+	</PICTURE>	
+
+	<!-- SERVERVIEW : 서버 이름및 인원수, 선택 사이즈 -->
+	<SERVERVIEW item="SelectedServerFrame" parent="LoginFrame">
+		<BOUNDS>
+			<X>0</X>
+			<Y>0</Y>
+			<W>555</W>
+			<H>260</H>
+		</BOUNDS>
+	</SERVERVIEW>
+
+	<SERVERVIEW item="SelectedServerTextSize" parent="LoginFrame">
+		<BOUNDS>
+			<X>8</X>
+			<Y>0</Y>
+			<W>270</W>
+			<H>16</H>
+		</BOUNDS>
+	</SERVERVIEW>
+
+	<!-- Picture : 일반서버, 레벨서버등 서버리스트 분류 라벨 -->
+	<PICTURE item ="ServerCategoryPicture_1" parent="LoginFrame">
+		<BOUNDS>
+			<X>18</X>
+			<Y>31</Y>
+			<W>248</W>
+			<H>20</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP></BITMAP>
+	</PICTURE>
+	<LABEL item="ServerCategoryText_1" parent="LoginFrame">
+		<FONT>FONTa10_O2Wht</FONT>
+		<TEXTCOLOR>
+			<R>200</R>
+			<G>200</G>
+			<B>200</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>98</X>
+			<Y>31</Y>
+			<W>300</W>
+			<H>18</H>
+		</BOUNDS>
+		<TEXT></TEXT>
+	</LABEL>
+
+
+	
+<!-- Label : 로그인 에러 -->
+	<LABEL item="LoginError" parent="LoginFrame">
+		<TEXTCOLOR>
+			<R>200</R>
+			<G>0</G>
+			<B>0</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>28</X>
+			<Y>151</Y>
+			<W>200</W>
+			<H>32</H>
+		</BOUNDS>
+		<TEXT></TEXT>
+	</LABEL>
+	
+		
+<!-- 버튼 -->
+	<!-- Button : 로그인 버튼 -->
+	<BUTTON item="LoginOK" parent="LoginFrame">
+		<BUTTONLOOK>DefaultButtonLook</BUTTONLOOK>
+		<BOUNDS>
+			<X>305</X>
+			<Y>151</Y>
+			<W>106</W>
+			<H>28</H>
+		</BOUNDS>
+		<DEFAULTKEY>ENTER</DEFAULTKEY>
+		<TEXT>STR:UI_LOGIN_04</TEXT> <!-- Login(&amp;G) -->
+		<FOCUSABLE>FALSE</FOCUSABLE>
+	</BUTTON>
+
+
+<!-- BMBUTTON : 종료 버튼 -->
+	<BMBUTTON item="Exit" parent="LoginFrame">
+		<BOUNDS>
+			<X>393</X>
+			<Y>8</Y>
+			<W>30</W>
+			<H>30</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP type="up">quit_off.tga</BITMAP>
+		<BITMAP type="over">quit_on.tga</BITMAP>
+		<BITMAP type="down">quit_off.tga</BITMAP>
+		<CONFIRMMESSAGE>STR:UI_LOGIN_05</CONFIRMMESSAGE> <!-- Do you want to quit the game? -->
+		<CONFIRMLOOK>DefaultFrameLook</CONFIRMLOOK>
+		<FOCUSABLE>FALSE</FOCUSABLE>
+	</BMBUTTON>		
+	
+	
+<!-- 아이디 입력 -->
+	<!-- Label : 아이디 -->
+	<LABEL item="Label_ID" parent="LoginFrame">
+		<FONT>FONTa10_O2Wht</FONT>
+		<TEXTCOLOR>
+			<R>200</R>
+			<G>200</G>
+			<B>200</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>302</X>
+			<Y>32</Y>
+			<W>150</W>
+			<H>24</H>
+		</BOUNDS>
+		<TEXT>STR:UI_LOGIN_02</TEXT> <!-- User ID -->
+	</LABEL>
+
+	<!-- LISTBOX : 뒷배경용 -->
+	<LISTBOX item="nulllistbox" parent="LoginFrame">
+		<LISTBOXLOOK>EquipListBoxLook</LISTBOXLOOK>
+		<BOUNDS>
+			<X>305</X>
+			<Y>55</Y>
+			<W>105</W>
+			<H>22</H>
+		</BOUNDS>
+		<ENABLE>FALSE</ENABLE>
+	</LISTBOX>
+	<LISTBOX item="nulllistbox" parent="LoginFrame">
+		<LISTBOXLOOK>EquipListBoxLook</LISTBOXLOOK>
+		<BOUNDS>
+			<X>305</X>
+			<Y>55</Y>
+			<W>105</W>
+			<H>22</H>
+		</BOUNDS>
+		<ENABLE>FALSE</ENABLE>
+	</LISTBOX>
+
+	<!-- Edit : 아이디 입력창 -->
+	<EDIT item="LoginID" parent="LoginFrame">
+		<EDITLOOK>NormalEditLook</EDITLOOK>
+		<BOUNDS>
+			<X>305</X>
+			<Y>55</Y>
+			<W>105</W>
+			<H>22</H>
+		</BOUNDS>
+		<TEXT></TEXT>
+	</EDIT>
+
+
+<!-- 비밀번호 입력 -->
+	<!-- Label : 비밀번호 -->
+	<LABEL item="Label_Password" parent="LoginFrame">
+		<FONT>FONTa10_O2Wht</FONT>
+		<TEXTCOLOR>
+			<R>200</R>
+			<G>200</G>
+			<B>200</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>302</X>
+			<Y>83</Y>
+			<W>150</W>
+			<H>22</H>
+		</BOUNDS>
+		<TEXT>STR:UI_LOGIN_03</TEXT> <!-- Password -->
+	</LABEL>
+
+	<!-- LISTBOX : 뒷배경용 -->
+	<LISTBOX item="nulllistbox" parent="LoginFrame">
+		<LISTBOXLOOK>EquipListBoxLook</LISTBOXLOOK>
+		<BOUNDS>
+			<X>305</X>
+			<Y>105</Y>
+			<W>105</W>
+			<H>22</H>
+		</BOUNDS>
+		<ENABLE>FALSE</ENABLE>
+	</LISTBOX>
+	<LISTBOX item="nulllistbox" parent="LoginFrame">
+		<LISTBOXLOOK>EquipListBoxLook</LISTBOXLOOK>
+		<BOUNDS>
+			<X>305</X>
+			<Y>105</Y>
+			<W>105</W>
+			<H>22</H>
+		</BOUNDS>
+		<ENABLE>FALSE</ENABLE>
+	</LISTBOX>
+
+	<!-- Edit : 비밀번호 입력창 -->
+	<EDIT item="LoginPassword" parent="LoginFrame">
+		<EDITLOOK>NormalEditLook</EDITLOOK>
+		<PASSWORD>true</PASSWORD>
+		<BOUNDS>
+			<X>305</X>
+			<Y>105</Y>
+			<W>105</W>
+			<H>22</H>
+		</BOUNDS>
+		<TEXT></TEXT>
+	</EDIT>
+<!-- 서버 IP 설정 -->
+	<!-- Label : 서버 IP -->
+	<LABEL item="LabelServerIP" parent="LoginFrame">
+		<BOUNDS>
+			<X>130</X>
+			<Y>202</Y>
+			<W>200</W>
+			<H>24</H>
+		</BOUNDS>
+		<TEXT>Debug Server</TEXT>
+		<VISIBLE>false</VISIBLE>
+	</LABEL>
+
+	<!-- Edit : IP 주소 입력창 -->
+	<EDIT item="ServerAddress" parent="LoginFrame">
+		<EDITLOOK>NormalEditLook</EDITLOOK>
+		<BOUNDS>
+			<X>215</X>
+			<Y>202</Y>
+			<W>110</W>
+			<H>24</H>
+		</BOUNDS>
+		<TEXT></TEXT>
+		<VISIBLE>false</VISIBLE>
+	</EDIT>
+
+	<!-- Edit : IP 포트 입력창 -->
+	<EDIT item="ServerPort" parent="LoginFrame">
+		<EDITLOOK>NormalEditLook</EDITLOOK>
+		<BOUNDS>
+			<X>330</X>
+			<Y>202</Y>
+			<W>45</W>
+			<H>24</H>
+		</BOUNDS>
+		<TEXT></TEXT>
+		<VISIBLE>false</VISIBLE>
+	</EDIT>
+</XML>
